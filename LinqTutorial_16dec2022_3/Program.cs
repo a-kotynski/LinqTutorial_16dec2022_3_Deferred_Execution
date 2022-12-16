@@ -21,14 +21,30 @@ internal class Program
             Console.WriteLine(word);
         }
 
-        var people = new List<Person>
+        //var people = new List<Person>
+        //{
+        //    new Person("John", "USA"),
+        //    new Person("Betty", "UK")
+        //};
+
+        //var allAmericans = people.Where(person => person.Country == "USA");
+
+        //var notAllAmericans = allAmericans.Take(100); /* Take(100) method takes the first 100 people of the original query*/
+
+        var animals = new List<string>()
         {
-            new Person("John", "USA"),
-            new Person("Betty", "UK")
+            "Duck", "Lion", "Dolphin", "Tiger"
         };
 
-        var allAmericans = people.Where(person => person.Country == "USA");
+        var animalsWithD = animals.Where(animal =>
+        {
+            Console.WriteLine("Checking animal: " + animal);
+            return animal.StartsWith('D');
+        });
 
-        var notAllAmericans = allAmericans.Take(100); /* Take(100) method takes the first 100 people of the original query*/
+        foreach (var animal in animalsWithD)
+        {
+            Console.WriteLine(animal);
+        }
     }
 }
